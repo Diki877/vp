@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from "react";
-
+import React, { useState} from "react";
 const InvoiceForm = ({ customers, products, invoices, setInvoices }) => {
   const [selectedCustomerId, setSelectedCustomerId] = useState("");
   const [selectedProductId, setSelectedProductId] = useState("");
