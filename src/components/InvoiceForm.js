@@ -128,15 +128,15 @@ const InvoiceForm = ({ customers, products, invoices, setInvoices }) => {
                 <tr>
                   <td style="border: 1px solid #ccc; padding: 8px;">${item.product.name}</td>
                   <td style="border: 1px solid #ccc; padding: 8px;">${item.quantity}</td>
-                  <td style="border: 1px solid #ccc; padding: 8px;">${item.product.price} RSD</td>
-                  <td style="border: 1px solid #ccc; padding: 8px;">${item.total} RSD</td>
+                  <td style="border: 1px solid #ccc; padding: 8px;">${item.product.price} €</td>
+                  <td style="border: 1px solid #ccc; padding: 8px;">${item.total} €</td>
                 </tr>
               `).join('')}
             </tbody>
           </table>
 
           <div style="margin-top: 20px; padding-top: 10px;">
-            <h4 style="text-align: right;">Ukupno: ${total} RSD</h4>
+            <h4 style="text-align: right;">Ukupno: ${total} €</h4>
             <p style="text-align: right;">Status: ${paid ? "Plaćeno" : "Nije plaćeno"}</p>
           </div>
         </div>
@@ -184,7 +184,7 @@ const InvoiceForm = ({ customers, products, invoices, setInvoices }) => {
           >
             <option value="">-- Izaberite proizvod --</option>
             {products.map(p => (
-              <option key={p.id} value={p.id}>{p.name} - {p.price} RSD</option>
+              <option key={p.id} value={p.id}>{p.name} - {p.price} €</option>
             ))}
           </select>
         </div>
@@ -221,8 +221,8 @@ const InvoiceForm = ({ customers, products, invoices, setInvoices }) => {
               <tr key={idx}>
                 <td>{item.product.name}</td>
                 <td>{item.quantity}</td>
-                <td>{item.product.price} RSD</td>
-                <td>{item.total} RSD</td>
+                <td>{item.product.price} €</td>
+                <td>{item.total} €</td>
                 <td>
                   <button className="btn btn-danger btn-sm" onClick={() => handleRemoveItem(idx)}>
                     Obriši
@@ -234,7 +234,7 @@ const InvoiceForm = ({ customers, products, invoices, setInvoices }) => {
         </table>
       )}
 
-      <div className="mt-3 fw-bold">Ukupno: {total} RSD</div>
+      <div className="mt-3 fw-bold">Ukupno: {total} €</div>
 
       <div className="form-check mt-3">
         <input
